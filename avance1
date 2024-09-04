@@ -18,3 +18,33 @@ class CuentaBancaria:
 
     def get_fechaApertura(self):
         return self.__fechaApertura
+
+  def set_fechaApertura(self, fechaApertura):
+        self.__fechaApertura = fechaApertura
+
+    def get_saldo(self):
+        return self.__saldo
+
+    def set_saldo(self, saldo):
+        self.__saldo = saldo
+
+ def abrir_cuenta(self, valor_inicial):
+        if valor_inicial >= 100000:
+            self.__saldo = valor_inicial
+            print("Cuenta abierta con éxito.")
+        else:
+            print("El valor inicial debe ser de al menos 100.000 pesos.")
+
+    def consignar(self, valor):
+        if valor > 0:
+            self.__saldo += valor
+            print("Consignación realizada con éxito.")
+        else:
+            print("No se pueden realizar consignaciones negativas.")
+
+    def retirar(self, valor):
+        if valor > 0 and valor <= self.__saldo:
+            self.__saldo -= valor
+            print("Retiro realizado con éxito.")
+        else:
+            print("No se pueden realizar retiros superiores al saldo.")
